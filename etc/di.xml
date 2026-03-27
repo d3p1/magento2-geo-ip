@@ -1,58 +1,16 @@
 <?xml version="1.0"?>
 <!--
 /**
- *
  * @description DI configuration
- *
- * @author Bina Commerce      <https://www.binacommerce.com>
- * @author C. M. de Picciotto <cmdepicciotto@binacommerce.com>
- *
+ * @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <!--
-    /**
-     *
-     * @note Add preference for geo IP management interface
-     *
-     */
-    -->
     <preference for="Bina\GeoIp\Api\GeoManagementInterface" type="Bina\GeoIp\Model\GeoManagement"/>
-
-    <!--
-    /**
-     *
-     * @note Add preference for geo IP info interface
-     *
-     */
-    -->
     <preference for="Bina\GeoIp\Api\IpInfoInterface" type="ipinfo\ipinfo\IPinfo"/>
-
-    <!--
-    /**
-     *
-     * @note Add preference for geo IP session interface
-     *
-     */
-    -->
     <preference for="Bina\GeoIp\Api\SessionInterface" type="Bina\GeoIp\Model\Session"/>
-
-    <!--
-    /**
-     *
-     * @note Add preference for geo IP system config interface
-     *
-     */
-    -->
     <preference for="Bina\GeoIp\Api\SystemConfigInterface" type="Bina\GeoIp\Model\System\Config"/>
 
-    <!--
-    /**
-     *
-     * @note Geo IP session model
-     *
-     */
-    -->
     <type name="Bina\GeoIp\Model\Session">
         <arguments>
             <argument name="storage" xsi:type="object">Bina\GeoIp\Model\Session\Storage</argument>
@@ -64,22 +22,7 @@
         </arguments>
     </virtualType>
 
-    <!--
-    /**
-     *
-     * @note Add preference for custom logger interface
-     *
-     */
-    -->
     <preference for="Bina\GeoIp\Api\LoggerInterface" type="Bina\GeoIp\Logger\Logger"/>
-
-    <!--
-    /**
-     *
-     * @note Define custom logger
-     *
-     */
-    -->
     <type name="Bina\GeoIp\Logger\Logger">
         <arguments>
             <argument name="name" xsi:type="string">geo</argument>
@@ -88,14 +31,6 @@
             </argument>
         </arguments>
     </type>
-
-    <!--
-    /**
-     *
-     * @note Define handler for custom logger
-     *
-     */
-    -->
     <type name="Bina\GeoIp\Logger\Handler\Base">
         <arguments>
             <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>

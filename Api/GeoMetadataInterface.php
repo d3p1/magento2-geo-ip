@@ -1,20 +1,14 @@
 <?php
 /**
- *
  * @description Geo metadata interface
- *
- * @author Bina Commerce      <https://www.binacommerce.com>
- * @author C. M. de Picciotto <cmdepicciotto@binacommerce.com>
- *
+ * @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
  */
 namespace Bina\GeoIp\Api;
 
 interface GeoMetadataInterface
 {
     /**
-     *
      * @const GEO_COUNTRY_HEADER
-     *
      */
     const GEO_COUNTRY_HEADER = 'CF-IPCountry';
 }

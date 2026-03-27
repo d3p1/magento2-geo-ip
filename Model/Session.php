@@ -1,13 +1,9 @@
 <?php
 /**
- *
  * @description Geo IP session
- *
- * @author Bina Commerce      <https://www.binacommerce.com>
- * @author C. M. de Picciotto <cmdepicciotto@binacommerce.com>
- *
- * @note This session model is intended to work like the checkout session model and its get quote feature
- *
+ * @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
+ * @note        This session model is intended to work
+ *              like the checkout session model and its get quote feature
  */
 namespace Bina\GeoIp\Model;
 
@@ -33,42 +29,31 @@ use Bina\GeoIp\Api\IpInfoInterface;
 class Session extends SessionManager implements SessionInterface
 {
     /**
-     *
      * @var IpInfoInterfaceFactory
-     *
      */
     protected $_ipInfoFactory;
 
     /**
-     *
      * @var SystemConfigInterface
-     *
      */
     protected $_config;
 
     /**
-     *
      * @var LoggerInterface
-     *
      */
     protected $_logger;
 
     /**
-     *
      * @var RemoteAddress
-     *
      */
     protected $_remoteAddress;
 
     /**
-     *
      * @var IpInfoInterface|null
-     *
      */
     private $_ipInfo = null;
 
     /**
-     *
      * Constructor
      *
      * @param IpInfoInterfaceFactory   $ipInfoFactory
@@ -85,7 +70,6 @@ class Session extends SessionManager implements SessionInterface
      * @param CookieMetadataFactory    $cookieMetadataFactory
      * @param State                    $appState
      * @param SessionStartChecker|null $sessionStartChecker
-     *
      */
     public function __construct(
         IpInfoInterfaceFactory $ipInfoFactory,
@@ -103,39 +87,11 @@ class Session extends SessionManager implements SessionInterface
         State                  $appState,
         SessionStartChecker    $sessionStartChecker = null
     ) {
-        /**
-         *
-         * @note Init IP info factory
-         *
-         */
         $this->_ipInfoFactory = $ipInfoFactory;
-
-        /**
-         *
-         * @note Init system config model
-         *
-         */
-        $this->_config = $config;
-
-        /**
-         *
-         * @note Init logger
-         *
-         */
-        $this->_logger = $logger;
-
-        /**
-         *
-         * @note Init remote address
-         *
-         */
+        $this->_config        = $config;
+        $this->_logger        = $logger;
         $this->_remoteAddress = $remoteAddress;
 
-        /**
-         *
-         * @note Call parent constructor
-         *
-         */
         parent::__construct(
             $request,
             $sidResolver,
@@ -151,108 +107,67 @@ class Session extends SessionManager implements SessionInterface
     }
 
     /**
-     *
      * Get user store ID from IP
      *
      * @return int
-     *
-     * @note It returns 0 as store ID when it is not possible to determine a store for user IP
-     *
+     * @note   It returns 0 as store ID when it is not possible
+     *         to determine a store for user IP
      */
     public function getUserStoreIdFromIp()
     {
         /**
-         *
          * @note Check if store ID was already determined
-         *
          */
         if (!is_null($this->getStoreId())) {
             /**
-             *
              * @note Return store ID
-             *
              */
             return $this->getStoreId();
         }
 
-        /**
-         *
-         * @note Init store ID as no store
-         *
-         */
         $storeId = 0;
-
-        /**
-         *
-         * @note Try to get IP details
-         *
-         */
         try {
-            /**
-             *
-             * @note Get user IP details
-             *
-             */
             $ipDetails = $this->_getIpDetails();
 
             /**
-             *
              * @note Check if country exists for user IP
-             *
              */
             if (isset($ipDetails->country)) {
                 /**
-                 *
                  * @note Get country related to IP
-                 *
                  */
                 $country = $ipDetails->country;
 
                 /**
-                 *
-                 * @note Check if there is a related store ID to the country obtained from the user's IP
-                 *
+                 * @note Check if there is a related store ID
+                 *       to the country obtained from the user's IP
                  */
                 if ($scopeId = $this->_getStoreIdByCountryCode($country)) {
-                    /**
-                     *
-                     * @note Set store ID
-                     *
-                     */
                     $storeId = $scopeId;
                 }
             }
         }
         catch (Exception $e) {
-            /**
-             *
-             * @note Log exception
-             *
-             */
-            $this->_logger->info('[' . $this->_getUserIp() . ']' . ' ' . $e->getMessage());
+            $this->_logger->info(
+                '[' . $this->_getUserIp() . ']' . ' ' . $e->getMessage()
+            );
         }
 
         /**
-         *
          * @note Set store ID in session to avoid determine it again
-         *
          */
         $this->setStoreId($storeId);
 
         /**
-         *
          * @note Return store ID
-         *
          */
         return $storeId;
     }
 
     /**
-     *
      * Get store ID
      *
      * @return int|null
-     *
      */
     public function getStoreId()
     {
@@ -260,13 +175,10 @@ class Session extends SessionManager implements SessionInterface
     }
 
     /**
-     *
      * Set store ID
      *
-     * @param int $storeId
-     *
+     * @param  int $storeId
      * @return void
-     *
      */
     public function setStoreId($storeId)
     {
@@ -274,11 +186,9 @@ class Session extends SessionManager implements SessionInterface
     }
 
     /**
-     *
      * Get IP details
      *
      * @return mixed
-     *
      */
     protected function _getIpDetails()
     {
@@ -286,44 +196,24 @@ class Session extends SessionManager implements SessionInterface
     }
 
     /**
-     *
      * Get IP info
      *
      * @return IpInfoInterface
-     *
      */
     protected function _getIpInfo()
     {
-        /**
-         *
-         * @note Check IP info
-         *
-         */
         if (is_null($this->_ipInfo)) {
-            /**
-             *
-             * @note Create IP info
-             *
-             */
             $this->_ipInfo = $this->_ipInfoFactory->create();
         }
 
-        /**
-         *
-         * @note Return IP info
-         *
-         */
         return $this->_ipInfo;
     }
 
     /**
-     *
      * Get store ID by country code
      *
-     * @param string $countryCode
-     *
+     * @param  string $countryCode
      * @return int|null
-     *
      */
     private function _getStoreIdByCountryCode($countryCode)
     {
@@ -331,11 +221,9 @@ class Session extends SessionManager implements SessionInterface
     }
 
     /**
-     *
      * Get user IP
      *
      * @return string
-     *
      */
     private function _getUserIp()
     {

@@ -1,11 +1,7 @@
 <?php
 /**
- *
  * @description Handler for custom logger
- *
- * @author Bina Commerce      <https://www.binacommerce.com>
- * @author C. M. de Picciotto <cmdepicciotto@binacommerce.com>
- *
+ * @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
  */
 namespace Bina\GeoIp\Logger\Handler;
 
@@ -15,16 +11,12 @@ use Bina\GeoIp\Logger\Logger;
 class Base extends BaseHandler
 {
     /**
-     *
      * @var int
-     *
      */
     protected $loggerType = Logger::INFO;
 
     /**
-     *
      * @var string
-     *
      */
     protected $fileName = '/var/log/geo.log';
 }
