@@ -1,12 +1,18 @@
-[![Bina Commerce](https://binacommerce.com/media/repo/banner-readme.png)](https://binacommerce.com/)
+<div align=center>
 
-# About the project
+# [MAGENTO 2 - GEO IP]
 
-A [Magento 2](https://business.adobe.com/products/magento/magento-commerce.html) implementation for my [Bina Commerce](https://binacommerce.com/) brand.
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![code consistency: php_code_sniffer](https://img.shields.io/badge/code_consistency-php_code_sniffer-blue.svg)](https://github.com/PHPCSStandards/PHP_CodeSniffer)
+[![code consistency: php_cs_fixer](https://img.shields.io/badge/code_consistency-php_cs_fixer-purple.svg)](http://github.com/PHP-CS-Fixer/PHP-CS-Fixer)
 
-This little development allows the redirection of the customers to the respective version of your store considering its geolocalization.
+</div>
 
-> **Warning**
+## Introduction
+
+A [Magento 2](https://business.adobe.com/products/magento/magento-commerce.html) tiny implementation that allows the redirection of the customers to the respective version of your store considering its geolocalization.
+
+> [!IMPORTANT]
 > To be able to use this implementation, it is necessary that your store is integrated with [Cloudflare](https://www.cloudflare.com/) using the [IP geolocation feature](https://support.cloudflare.com/hc/en-us/articles/200168236-Configuring-IP-geolocation).
 
 ## Installation
@@ -14,23 +20,31 @@ This little development allows the redirection of the customers to the respectiv
 To proceed with the installation of your module, you need to go to the [document root of your Magento installation](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/docroot.html) and run the following commands:
 
 ```
-composer require bina/module-geo-ip
+composer require d3p1/module-geo-ip
 bin/magento setup:upgrade
 bin/magento setup:di:compile
 bin/magento setup:static-content:deploy
 bin/magento cache:clean
 bin/magento cache:flush
 ```
-> **Note**
+
+> [!NOTE]
 > To execute `bin/magento setup:static-content:deploy` you need to list all the languages of your store/s using the ISO-639 format. Also, if you are using a platform mode different than production, you need to execute the command using the `-f` flag: `bin/magento setup:static-content:deploy -f` (https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-static-view.html).
 
-> **Note**
+> [!NOTE]
 > The command `bin/magento cache:flush` is optional (https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean).
 
-## Usage
+## Changelog
 
-In order to find documentation on the use and related issues, visit the [official page](https://binacommerce.com/geo-ip-redirect.html) of this development.
+Detailed changes for each release are documented in [`CHANGELOG.md`](./CHANGELOG.md).
+
+## License
+
+This work is published under [MIT License](./LICENSE).
 
 ## Author
 
-- [LinkedIn](https://www.linkedin.com/in/cristian-marcelo-de-picciotto/) 
+Always happy to receive a greeting on:
+
+- [LinkedIn](https://www.linkedin.com/in/cristian-marcelo-de-picciotto/)
+- [Web](https://d3p1.dev/)
