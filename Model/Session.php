@@ -5,7 +5,7 @@
  * @note        This session model is intended to work
  *              like the checkout session model and its get quote feature
  */
-namespace Bina\GeoIp\Model;
+namespace D3p1\GeoIp\Model;
 
 use Exception;
 use Magento\Framework\App\Request\Http;
@@ -20,11 +20,11 @@ use Magento\Framework\Session\SaveHandlerInterface;
 use Magento\Framework\Session\ValidatorInterface;
 use Magento\Framework\Session\StorageInterface;
 use Magento\Framework\Session\SessionStartChecker;
-use Bina\GeoIp\Api\LoggerInterface;
-use Bina\GeoIp\Api\SystemConfigInterface;
-use Bina\GeoIp\Api\SessionInterface;
-use Bina\GeoIp\Api\IpInfoInterfaceFactory;
-use Bina\GeoIp\Api\IpInfoInterface;
+use D3p1\GeoIp\Api\LoggerInterface;
+use D3p1\GeoIp\Api\SystemConfigInterface;
+use D3p1\GeoIp\Api\SessionInterface;
+use D3p1\GeoIp\Api\IpInfoInterfaceFactory;
+use D3p1\GeoIp\Api\IpInfoInterface;
 
 class Session extends SessionManager implements SessionInterface
 {

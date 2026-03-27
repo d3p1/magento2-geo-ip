@@ -10,7 +10,7 @@
         <arguments>
             <argument name="routerList" xsi:type="array">
                 <item name="geoip" xsi:type="array">
-                    <item name="class" xsi:type="string">Bina\GeoIp\Controller\Router</item>
+                    <item name="class" xsi:type="string">D3p1\GeoIp\Controller\Router</item>
                     <item name="disable" xsi:type="boolean">false</item>
                     <item name="sortOrder" xsi:type="string">15</item>
                 </item>

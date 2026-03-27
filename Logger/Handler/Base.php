@@ -3,10 +3,10 @@
  * @description Handler for custom logger
  * @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
  */
-namespace Bina\GeoIp\Logger\Handler;
+namespace D3p1\GeoIp\Logger\Handler;
 
 use Magento\Framework\Logger\Handler\Base as BaseHandler;
-use Bina\GeoIp\Logger\Logger;
+use D3p1\GeoIp\Logger\Logger;
 
 class Base extends BaseHandler
 {

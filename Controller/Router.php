@@ -7,7 +7,7 @@
  *              is only called for storefront requests (so this logic will
  *              not be applied to REST API requests or other type of requests)
  */
-namespace Bina\GeoIp\Controller;
+namespace D3p1\GeoIp\Controller;
 
 use Exception;
 use Magento\Framework\App\RouterInterface;
@@ -22,8 +22,8 @@ use Magento\Store\Api\StoreRepositoryInterface;
 use Magento\Store\Controller\Store\SwitchAction\CookieManager;
 use Magento\Store\Model\StoreManagerInterface;
 use Magento\Store\Model\Store;
-use Bina\GeoIp\Api\LoggerInterface;
-use Bina\GeoIp\Api\GeoManagementInterface;
+use D3p1\GeoIp\Api\LoggerInterface;
+use D3p1\GeoIp\Api\GeoManagementInterface;
 
 class Router implements RouterInterface
 {

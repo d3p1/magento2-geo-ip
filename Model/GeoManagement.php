@@ -3,14 +3,14 @@
  * @description Geo management model
  * @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
  */
-namespace Bina\GeoIp\Model;
+namespace D3p1\GeoIp\Model;
 
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\App\Request\Http;
-use Bina\GeoIp\Api\GeoMetadataInterface;
-use Bina\GeoIp\Api\GeoManagementInterface;
-use Bina\GeoIp\Api\SystemConfigInterface;
-use Bina\GeoIp\Api\SessionInterface;
+use D3p1\GeoIp\Api\GeoMetadataInterface;
+use D3p1\GeoIp\Api\GeoManagementInterface;
+use D3p1\GeoIp\Api\SystemConfigInterface;
+use D3p1\GeoIp\Api\SessionInterface;
 
 class GeoManagement implements GeoManagementInterface
 {

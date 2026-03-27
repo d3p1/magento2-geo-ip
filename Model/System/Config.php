@@ -3,10 +3,10 @@
  * @description System config model
  * @author      C. M. de Picciotto <d3p1@d3p1.dev> (https://d3p1.dev/)
  */
-namespace Bina\GeoIp\Model\System;
+namespace D3p1\GeoIp\Model\System;
 
 use Magento\Config\Model\ResourceModel\Config\Data\CollectionFactory;
-use Bina\GeoIp\Api\SystemConfigInterface;
+use D3p1\GeoIp\Api\SystemConfigInterface;
 
 class Config implements SystemConfigInterface
 {

@@ -1,5 +1,5 @@
 {
-    "name": "bina/module-geo-ip",
+    "name": "d3p1/module-geo-ip",
     "description": "Geo IP",
     "type": "magento2-module",
     "version": "2.2.3",
@@ -7,12 +7,12 @@
         "OSL-3.0",
         "AFL-3.0"
     ],
-    "homepage": "https://www.binacommerce.com",
+    "homepage": "https://www.d3p1.dev",
     "authors": [
         {
             "name": "C. M. de Picciotto",
-            "email": "cmdepicciotto@binacommerce.com",
-            "homepage": "https://www.binacommerce.com",
+            "email": "d3p1@d3p1.dev",
+            "homepage": "https://www.d3p1.dev",
             "role": "Leader"
         }
     ],
@@ -27,7 +27,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "Bina\\GeoIp\\": ""
+            "D3p1\\GeoIp\\": ""
         }
     }
 }
