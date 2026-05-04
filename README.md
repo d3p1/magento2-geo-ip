@@ -17,8 +17,8 @@ respective version of your store considering its geolocalization.
 > [!IMPORTANT]
 > To be able to use this implementation, it is necessary that your store is
 > integrated with [Cloudflare](https://www.cloudflare.com/) using
->
-the [IP geolocation feature](https://support.cloudflare.com/hc/en-us/articles/200168236-Configuring-IP-geolocation).
+> the
+[IP geolocation feature](https://support.cloudflare.com/hc/en-us/articles/200168236-Configuring-IP-geolocation).
 
 ## Installation
 
