@@ -10,14 +10,21 @@
 
 ## Introduction
 
-A [Magento 2](https://business.adobe.com/products/magento/magento-commerce.html) tiny implementation that allows the redirection of the customers to the respective version of your store considering its geolocalization.
+A [Magento 2](https://business.adobe.com/products/magento/magento-commerce.html)
+tiny implementation that allows the redirection of the customers to the
+respective version of your store considering its geolocalization.
 
 > [!IMPORTANT]
-> To be able to use this implementation, it is necessary that your store is integrated with [Cloudflare](https://www.cloudflare.com/) using the [IP geolocation feature](https://support.cloudflare.com/hc/en-us/articles/200168236-Configuring-IP-geolocation).
+> To be able to use this implementation, it is necessary that your store is
+> integrated with [Cloudflare](https://www.cloudflare.com/) using
+>
+the [IP geolocation feature](https://support.cloudflare.com/hc/en-us/articles/200168236-Configuring-IP-geolocation).
 
 ## Installation
 
-To proceed with the installation of your module, you need to go to the [document root of your Magento installation](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/docroot.html) and run the following commands:
+To proceed with the installation of your module, you need to go to
+the [document root of your Magento installation](https://experienceleague.adobe.com/docs/commerce-operations/installation-guide/tutorials/docroot.html)
+and run the following commands:
 
 ```
 composer require d3p1/module-geo-ip
@@ -29,14 +36,23 @@ bin/magento cache:flush
 ```
 
 > [!NOTE]
-> To execute `bin/magento setup:static-content:deploy` you need to list all the languages of your store/s using the ISO-639 format. Also, if you are using a platform mode different than `production`, you need to execute the command using the `-f` flag: [`bin/magento setup:static-content:deploy -f`](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-static-view.html).
+> To execute `bin/magento setup:static-content:deploy` you need to list all the
+> languages of your store/s using the
+> [ISO-639 format](http://en.wikipedia.org/wiki/List_of_ISO_639_language_codes).
+> Also, if you are using a platform mode different than
+`production`, you need to execute the command
+> using the `-f` flag: [
+`bin/magento setup:static-content:deploy -f`](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-static-view.html).
 
 > [!NOTE]
-> The command `bin/magento cache:flush` is [optional](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean).
+> The command `bin/magento cache:flush`
+> is
+[optional](https://devdocs.magento.com/guides/v2.4/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean).
 
 ## Changelog
 
-Detailed changes for each release are documented in [`CHANGELOG.md`](./CHANGELOG.md).
+Detailed changes for each release are documented in [
+`CHANGELOG.md`](./CHANGELOG.md).
 
 ## License
 
