@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/d3p1/magento2-geo-ip/compare/v1.1.1...v1.1.2) (2026-05-06)
+
+
+### Bug Fixes
+
+* improve code style [[#1](https://github.com/d3p1/magento2-geo-ip/issues/1)] ([0c1f23a](https://github.com/d3p1/magento2-geo-ip/commit/0c1f23af582c0be0efa8197fe7b40d132fda64a9))
+
 ## [1.1.1](https://github.com/d3p1/magento2-geo-ip/compare/v1.1.0...v1.1.1) (2026-05-05)
 
 
